@@ -10,4 +10,12 @@ defmodule EulerTest do
     assert Problem1.solution(10) == 23
   end
 
+  test "even fibonacci numbers" do
+    assert Problem2.solution(10) == 10
+  end
+
+  test "largest prime factor" do
+    assert Problem3.solution(13195) == 29
+  end
+
 end
