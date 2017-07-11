@@ -18,4 +18,8 @@ defmodule EulerTest do
     assert Problem3.solution(13195) == 29
   end
 
+  test "largest palindrome product" do
+    assert Problem4.solution(2) == 9009 # 99 * 91
+  end
+
 end
