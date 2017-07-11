@@ -1,18 +1,21 @@
 defmodule Problem3 do
 
   @doc """
-  Elixir solution based on factorization
+  Elixir solution based on factorization:
+  Taking the last element in the list of factors
   """
   def solution(n) do
     factorize(n)
     #prime_numbers
-    #|> Stream.take_while(fn x -> x < n / 2 end)
+    #|> Stream.take_while(fn x -> x < div(n,2) end)
     #|> Stream.filter(fn x -> rem(n, x) == 0 end)
     |> Enum.max
   end
 
   @doc """
-  Factorize FTW
+  Factorize FTW using pattern matching
+  first try 2, then 3, then 4 (but 2 already covered that one) => 5 ...
+  divide each time if possible, ending in a list of possible factors
   """
   def factorize(x), do: factorize x, 2
   defp factorize(1, _), do: []
@@ -24,7 +27,7 @@ defmodule Problem3 do
 
   @doc """
   Trying with prime numbers stream and filter,
-  but was slow as hell, at least I have a stream of it :)
+  but was slow as hell; at least I have a stream of it :)
   """
   def prime_numbers do
     Stream.unfold([], fn primes ->
