@@ -1,6 +1,6 @@
 # Euler
 
-**TODO: Add description**
+**Learning Elixir through solving Eulerproject.net problems**
 
 ## Installation
 
