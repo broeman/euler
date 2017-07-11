@@ -18,7 +18,7 @@ defmodule Problem4 do
   def palindrome_product(size) do
     upper = String.to_integer(String.duplicate("9", size))
     lower = String.to_integer("1" <> String.duplicate("0", size - 1))
-    z = Enum.map(upper..lower, fn x -> Enum.map(upper..x, fn y -> x * y end) end)
+    Enum.map(upper..lower, fn x -> Enum.map(upper..x, fn y -> x * y end) end)
     |> List.flatten |> Enum.sort |> Enum.reverse
     |> Enum.find(fn x -> palindrome?(x) end)
   end
